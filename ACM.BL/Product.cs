@@ -8,6 +8,8 @@ namespace ACM.BL
 {
     public class Product : EntityBase
     {
+        private string _productName;
+
         public Product()
         {
 
@@ -19,7 +21,12 @@ namespace ACM.BL
         }
 
         public int ProductId { get; private set; }
-        public string ProductName { get; set; }
+        public string ProductName
+        {
+            get { return _productName; }
+            set { _productName = value; }
+        }
+
         public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
 
@@ -29,5 +36,7 @@ namespace ACM.BL
         }
 
         public override string ToString() => ProductName;
+
+
     }
 }
